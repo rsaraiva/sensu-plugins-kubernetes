@@ -11,6 +11,7 @@ This provides functionality to check node and pod status as well as api and serv
 
 ## Files
 - bin/check-kube-nodes-ready.rb
+- bin/check-kube-nodes-minimal-ready.rb
 - bin/check-kube-apiserver-available.rb
 - bin/check-kube-pods-pending.rb
 - bin/check-kube-service-available.rb
@@ -35,6 +36,23 @@ Usage: check-kube-nodes-ready.rb (options)
         --token-file TOKEN-FILE      File containing bearer token for authorization
     -u, --user USER                  User with access to API
     -v, --api-version VERSION        API version
+```
+
+**check-kube-nodes-minimal-ready.rb**
+```
+Usage: check-kube-nodes-minimal-ready.rb (options)
+        --ca-file CA-FILE            CA file to verify API server cert
+        --cert CERT-FILE             Client cert to present
+        --key KEY-FILE               Client key for the client cert
+        --in-cluster                 Use service account authentication
+    -p, --password PASSWORD          If user is passed, also pass a password
+    -s, --api-server URL             URL to API server
+    -t, --token TOKEN                Bearer token for authorization
+        --token-file TOKEN-FILE      File containing bearer token for authorization
+    -u, --user USER                  User with access to API
+    -v, --api-version VERSION        API version
+    -m, --minimal COUNT              Threshold for minimal nodes ready allowed
+    -f, --filter FILTER              Selector filter for nodes to be checked
 ```
 
 **check-kube-apiserver-available.rb**
